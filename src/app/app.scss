@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// Variables Material
+:host {
+  font-family: 'Inter', sans-serif;
+  display: block;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+// Estilos para el card principal
+.main-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  
+  .mat-mdc-card-header {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+    color: white;
+    margin: -24px -24px 24px -24px;
+    padding: 32px 24px;
+    border-radius: 16px 16px 0 0;
+    
+    .mat-mdc-card-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0;
+      
+      .title-icon {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+      }
+    }
+    
+    .mat-mdc-card-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px;
+      margin-top: 8px;
+    }
+  }
+}
+
+// Sección de controles
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+  
+  .continent-select {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    button {
+      min-width: 160px;
+      height: 48px;
+      border-radius: 8px;
+      font-weight: 500;
+      text-transform: none;
+      font-size: 16px;
+      
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+// Grid de imágenes
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+// Cards de países
+.country-card {
+  border-radius: 12px !important;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .flag-image {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .mat-mdc-card-content {
+    text-align: center;
+    padding: 16px !important;
+    
+    .country-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 8px 0;
+    }
+    
+    .capital-name {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+}
+
+// Contenedor de loading
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+  gap: 16px;
+  
+  .loading-text {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  :host {
+    padding: 12px;
+  }
+  
+  .main-card {
+    .mat-mdc-card-header {
+      margin: -16px -16px 16px -16px;
+      padding: 24px 16px;
+      
+      .mat-mdc-card-title {
+        font-size: 24px;
+        
+        .title-icon {
+          font-size: 28px;
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+  
+  .controls-section {
+    .button-group {
+      flex-direction: column;
+      align-items: center;
+      
+      button {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+  
+  .images-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+}
